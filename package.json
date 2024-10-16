@@ -1,0 +1,42 @@
+{
+  "name": "@zxalct/vite-plugin-purgecss",
+  "version": "0.0.5",
+  "author": "zaxlct",
+  "description": "Updated version of the vite plugin for removing unused CSS from generated bundles using PurgeCSS. All credits for Joe Stanley",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "dist",
+    "*.d.ts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zaxlct/@zxalct/vite-plugin-purgecss"
+  },
+  "scripts": {
+    "build": "tsup-node src/*.ts --format cjs,esm --dts --splitting --clean",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "vite",
+    "plugin",
+    "purgecss"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "purgecss": "^6.0.0",
+    "tsup": "^8.0.2",
+    "vite": "^5.2.12"
+  },
+  "devDependencies": {
+    "@types/node": "^20.13.0",
+    "typescript": "^4.9.5"
+  }
+}
