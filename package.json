@@ -21,7 +21,7 @@
     "url": "https://github.com/zaxlct/@zxalct/vite-plugin-purgecss"
   },
   "scripts": {
-    "build": "tsup-node src/*.ts --format cjs,esm --dts --splitting --clean",
+    "build": "./node_modules/.bin/tsup src/*.ts --format cjs,esm --dts --splitting --clean",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
@@ -32,11 +32,11 @@
   "license": "MIT",
   "dependencies": {
     "purgecss": "^6.0.0",
-    "tsup": "^8.0.2",
     "vite": "^5.2.12"
   },
   "devDependencies": {
     "@types/node": "^20.13.0",
+    "tsup": "^8.3.0",
     "typescript": "^4.9.5"
   }
 }

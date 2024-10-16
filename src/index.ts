@@ -27,7 +27,10 @@ function purgeCssPlugin(opts?: Options): VitePlugin {
       config.build.rollupOptions = config.build.rollupOptions || {};
 
       // 添加我们的 Rollup 插件到 rollupOptions.plugins
-      const plugins = config.build.rollupOptions.plugins || [];
+      let plugins = config.build.rollupOptions.plugins || [];
+      if (!Array.isArray(plugins)) {
+        plugins = [plugins];
+      }
       plugins.push(purgeCssRollupPlugin(opts));
       config.build.rollupOptions.plugins = plugins;
     },
